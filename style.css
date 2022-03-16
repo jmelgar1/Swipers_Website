@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 *{
   margin: 0;
   padding: 0;
@@ -14,9 +14,9 @@ section{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: url(Images/background.png)no-repeat;
   background-size: cover;
   background-position: center;
+  background: url(images/background.png)no-repeat;
 }
 
 header{
@@ -78,6 +78,25 @@ textarea{
   box-shadow: inset 0 0 1.5px #000000;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+
 .navigation a.active {
   background-color: #fff;
 }
@@ -137,11 +156,17 @@ textarea{
   border: none;
   max-width: 200px;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
 .content .info-btn:hover, .submit-btn:hover{
   background: #e9bb3f;
+}
+
+/* Form CSS */
+
+.form-row{
+  display: flex;
 }
 
 .media-icons{
@@ -175,11 +200,67 @@ label{
   color: black;
   display: block;
   cursor: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 #check{
   z-index: 3;
   display: none;
+}
+
+#container{
+}
+
+#first{
+  float: left;
+}
+
+#second{
+  float: left;
+}
+
+#clear{
+  clear: both;
+}
+
+#status{
+  text-align: center;
+  margin: auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#status.success{
+  background: #5dd959;
+  animation: status 4s ease forwards;
+}
+
+#status.error{
+  background: #d95959;
+  animation: status 4s ease forwards;
+}
+
+@keyframes status {
+  0%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  90%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 /* Responsive Styles */
@@ -199,12 +280,6 @@ label{
 
   label:hover{
     color: #fff;
-  }
-
-  .disabled ,.disabled:hover{
-    color: black;
-    display: block;
-    cursor: auto;
   }
 
   label .close-btn{

@@ -25,23 +25,33 @@
     <div class="content" style="position: relative; margin-left: auto; margin-right: auto">
       <div class="info">
           <h2>Contact Us<br><span>Support & Questions</span></h2>
-          <form>
-            <label for="firstName" class="disabled">First Name</label>
-            <input type="text" class="form-control" id="firstName" required>
 
-            <label for="lastName" class="disabled">Last Name</label>
-            <input type="text" class="form-control" id="lastName" required>
+          <form action="https://formspree.io/f/moqrlnaq" method="POST" class="contact-form" id="my-form">
+
+            <label for="fullName" class="disabled">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" required>
 
             <label for="email" class="disabled">Email</label>
-            <input type="email" class="form-control" id="email" required>
+            <input type="email" class="form-control" id="email" name="email" required>
 
-            <label for="message" class="disabled">Questions, comments, or concerns</label>
-            <textarea name="Message" class="form-control" id="message" required></textarea>
+            <label for="dropdown" class="disabled">Question, comment, or concern?</label>
+            <select name="options" id="options">
+              <option value="question">Question</option>
+              <option value="comment">Comment</option>
+              <option value="concern">Concern</option>
+            </select>
+
+            <label for="message" class="disabled">Additional Information</label>
+            <textarea name="Message" class="form-control" id="message" style="resize: none" required></textarea>
 
             <button type="submit" class="submit-btn">Submit</button>
           </form>
+
+          <script src="https://smtpjs.com/v3/smtp.js"></script>
       </div>
+      <div id="status"></div>
     </div>
   </section>
+  <script src="javascript/app.js"></script>
 </body>
 </html>
